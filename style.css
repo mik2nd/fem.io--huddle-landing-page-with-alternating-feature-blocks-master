@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  --accent: hsl(322, 100%, 66%);
+
+  --clr-text: hsl(193, 100%, 96%);
+  --clr-text-head: hsl(192, 100%, 9%);
+  --clr-text-para: hsl(208, 11%, 55%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a {
+  font-family: "Open Sans";
+  color: black;
+  text-decoration: none;
+  box-shadow: 0 0 10px -6px black;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans";
+}
+img,
+svg {
+  max-width: 100%;
+}
+p {
+  color: var(--clr-text-para);
+  line-height: 1.6rem;
+}
+h1,
+h2 {
+  font-family: "Poppins";
+  color: var(--clr-text-head);
+}
+.btn {
+  display: inline-block;
+  min-width: max-content;
+  border-radius: 100vw;
+  background-color: white;
+  text-align: center;
+  font-weight: 700;
+  padding: 0.5rem 1.5rem;
+  transition: 250ms;
+}
+section,
+header {
+  padding: 1rem;
+  margin-bottom: 5rem;
+}
+section {
+  text-align: center;
+  box-shadow: 0 0 10px -6px black;
+  max-width: 375px;
+  border-radius: 1rem;
+  padding-bottom: 2rem;
+  margin-inline: auto;
+}
+header {
+  background-image: url(images/bg-hero-mobile.svg);
+  background-color: var(--clr-text);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  gap: 5rem;
+  padding-bottom: 5rem;
+}
+footer {
+  background-color: rgb(0, 58, 58);
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  color: white;
+  padding: 1rem;
+  padding-top: 5rem;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+li a {
+  color: inherit;
+
+  &:hover {
+    color: white;
+    text-decoration: underline;
+  }
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  img {
+    max-width: 10rem;
+  }
+}
+.user {
+  margin-bottom: 10rem;
+}
+.ready {
+  position: absolute;
+  margin-bottom: 0;
+  background: white;
+  text-align: center;
+  box-shadow: 0 0 10px -6px black;
+  border-radius: 1rem;
+  padding: 1rem;
+  top: -15%;
+  left: calc(1% + 10%);
+  right: calc(1% + 10%);
+}
+.hero {
+  display: grid;
+  gap: 5rem;
+}
+.accent {
+  padding: 1rem 4rem;
+  background-color: var(--accent);
+  color: white;
+
+  &:hover {
+    color: white;
+    opacity: 0.7;
+  }
+}
+.about {
+  margin-top: 5rem;
+  display: grid;
+  gap: 1rem;
+
+  > * + * {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    gap: 1rem;
+
+    > img {
+      justify-self: center;
+    }
+  }
+}
+.social {
+  justify-self: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  > :nth-child(1) {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    gap: 1rem;
+    place-content: center;
+
+    > * {
+      border: 2px solid white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      padding: 0.6rem;
+      fill: white;
+
+      &:hover {
+        fill: var(--accent);
+        border-color: var(--accent);
+      }
+    }
+  }
+}
+span.copy {
+  display: inline-block;
+  margin-top: 1rem;
+}
+.nav {
+  ul {
+    display: grid;
+    gap: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hero {
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+
+    > :nth-child(1) {
+      max-width: 30rem;
+    }
+  }
+  section {
+    text-align: start;
+    max-width: calc(100% - 10rem);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+
+    > div {
+      max-width: 20rem;
+    }
+  }
+  .grow {
+    > img {
+      order: 1;
+    }
+  }
+  .user {
+    > img {
+      order: 1;
+    }
+  }
+  .ready {
+    left: calc(10% + 10%);
+    right: calc(10% + 10%);
+  }
+  footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 4rem;
+  }
+  .nav ul {
+    translate: 0 2.8rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    > :nth-child(1) {
+      order: 1;
+    }
+    > :nth-child(2) {
+      order: 3;
+    }
+    > :nth-child(3) {
+      order: 5;
+    }
+    > :nth-child(4) {
+      order: 2;
+    }
+    > :nth-child(5) {
+      order: 4;
+    }
+    > :nth-child(6) {
+      order: 6;
+    }
+  }
+  .social {
+    translate: 0 3rem;
+    justify-self: start;
+    text-align: start;
+
+    > :nth-child(1) {
+      place-content: start;
+    }
+  }
+  span.copy {
+    margin-top: 5rem;
+  }
+}
